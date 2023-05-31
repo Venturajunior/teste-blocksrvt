@@ -14,5 +14,6 @@ export const CardListContainer = styled.div`
 export const CardListGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   gap: 1.6rem;
 `

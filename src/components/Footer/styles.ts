@@ -8,10 +8,6 @@ export const FooterContainer = styled.footer`
   gap: 2.8rem;
   padding: 2.4rem;
 
-  /* position: fixed;
-  bottom: 0;
-  width: 100%; */
-
   background: #E9E9E9;
 
   @media ${devices["sm-max"]} {
