@@ -30,7 +30,7 @@ O objetivo é criar um catálogo de famílias (blocos 3D), onde a paginação se
 
 
 ## Features
-- Paginação tipo scroll loading
+- Paginação tipo scroll loading (take inicial de 21 com incrementos de 10)
 - Responsividade com breakpoint de 640px
 
 ## Autor
