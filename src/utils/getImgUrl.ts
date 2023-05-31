@@ -1,0 +1,1 @@
+export const getImgUrl = (urlId: string) => `https://plugin-storage.nyc3.digitaloceanspaces.com/families/images/${urlId}.jpg`
