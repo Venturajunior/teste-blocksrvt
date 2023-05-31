@@ -30,7 +30,7 @@ export function FamiliesProvider({ children }: FamiliesProviderProps) {
   const [families, setFamilies] = useState<Family[]>([]);
 
 
-  async function fetchFamilies({ skip = 0, take = 1 }: FetchProps) {
+  async function fetchFamilies({ skip = 0, take = 10 }: FetchProps) {
     const response = await api.get<Family[]>('/families', {
       params: {
         skip,

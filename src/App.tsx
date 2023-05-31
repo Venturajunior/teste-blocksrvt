@@ -1,16 +1,16 @@
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import { RoutesApp } from './components/Router'
 import { GlobalStyles } from './styles/global'
 import { FamiliesProvider } from './contexts/FamiliesContext'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <GlobalStyles />
       <FamiliesProvider>
         <RoutesApp />
       </FamiliesProvider>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

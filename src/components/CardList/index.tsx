@@ -13,7 +13,7 @@ export const CardList: FC = () => {
 
   const fetchMoreData = async () => {
     const skip = cardsListLength + 1;
-    const take = 100;
+    const take = 10;
     try {
       await fetchFamilies({ skip, take })
     } catch (error) {
