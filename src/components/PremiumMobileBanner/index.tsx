@@ -3,6 +3,7 @@ import { ArrowRight } from "@phosphor-icons/react";
 import React, { useState } from "react";
 
 export const PremiumMobileBanner: React.FC = () => {
+  const premLink = 'https://www.blocksrvt.com/en/home#plan'
 
   const [isDivVisible, setIsDivVisible] = useState(true);
 
@@ -16,7 +17,7 @@ export const PremiumMobileBanner: React.FC = () => {
         <PremiumMobileContainer>
           <CloseButton onClick={handleCloseDiv}>Fechar x</CloseButton>
           <p>Não limite sua criatividade, junte-se a familia Blocks por apenas <strong>BRL 19,99</strong></p>
-          <Button>Quero ser premium <ArrowRight size={16} /> </Button>
+          <Button><a href={premLink}>Quero ser premium</a> <ArrowRight size={16} /> </Button>
         </PremiumMobileContainer>}
     </>
   )

@@ -1,15 +1,15 @@
-import { FC, useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { Card } from "../Card";
 import { CardListContainer, CardListGrid } from "./styles";
 import { FamiliesContext } from "../../contexts/FamiliesContext";
 import { getImgUrl } from "../../utils/getImgUrl";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-export const CardList: FC = () => {
-  const { families, fetchFamilies } = useContext(FamiliesContext);
+export const CardList: React.FC = () => {
+  const { noDupFamiliesArray, fetchFamilies } = useContext(FamiliesContext);
   const [hasMoreData, setHasMoreData] = useState(true);
 
-  const cardsListLength = families.length;
+  const cardsListLength = noDupFamiliesArray.length;
 
   const fetchMoreData = async () => {
     const skip = cardsListLength + 1;
@@ -33,7 +33,7 @@ export const CardList: FC = () => {
         loader={"..."}
       >
         <CardListGrid>
-          {families.map((family) => {
+          {noDupFamiliesArray.map((family) => {
             return (
               <Card
                 key={family.id}

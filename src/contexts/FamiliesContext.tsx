@@ -11,8 +11,9 @@ interface Family {
 }
 
 interface FamilyContextType {
-  families: Family[];
-  fetchFamilies: (props: FetchProps) => Promise<void>;
+  families: Family[]
+  noDupFamiliesArray: Family[]
+  fetchFamilies: (props: FetchProps) => Promise<void>
 }
 
 interface FamiliesProviderProps {
@@ -44,8 +45,18 @@ export function FamiliesProvider({ children }: FamiliesProviderProps) {
     fetchFamilies({})
   }, [])
 
+  const noDupFamiliesArray: Family[] = families.filter(
+    (obj, index, self) => index === self.findIndex((o) => o.id === obj.id)
+  );
+
   return (
-    <FamiliesContext.Provider value={{ families, fetchFamilies }}>
+    <FamiliesContext.Provider
+      value={{
+        families,
+        noDupFamiliesArray,
+        fetchFamilies
+      }}
+    >
       {children}
     </FamiliesContext.Provider >
   )

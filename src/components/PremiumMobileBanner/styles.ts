@@ -15,6 +15,11 @@ export const PremiumMobileContainer = styled.div`
   order: 1;
   text-align: center;
 
+  a {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+
   @media ${devices["sm-min"]} {
     display: none;
   }

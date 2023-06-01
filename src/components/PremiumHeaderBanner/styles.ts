@@ -13,6 +13,11 @@ export const PremiumBarContainer = styled.div`
   font-size: 1.8rem;
   order: 1;
 
+  a {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+
   @media ${devices["sm-max"]} {
     display: none;
   }
