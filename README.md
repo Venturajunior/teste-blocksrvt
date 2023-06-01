@@ -9,6 +9,10 @@ O objetivo é criar um catálogo de famílias (blocos 3D), onde a paginação se
 -Responsividade implementada<br>
 -Deploy realizado<br>
 
+## Features
+- Paginação tipo scroll loading (take inicial de 21 com incrementos de 10)
+- Responsividade com breakpoint de 640px
+
 ### Deployed Version
 [Catálogo Blocks Revit](https://teste-blocksrvt.vercel.app/)
 
@@ -26,18 +30,13 @@ O objetivo é criar um catálogo de famílias (blocos 3D), onde a paginação se
 
 
 
-## Executnado o projeto localmente
+## Executando o projeto localmente
 - Clonar o projeto: <br>
  `git clone https://github.com/Venturajunior/teste-blocksrvt.git`
 - Instalar dependências:<br>
 `npm i`
 - Rodar o projeto:<br>
 `npm run dev`
-
-
-## Features
-- Paginação tipo scroll loading (take inicial de 21 com incrementos de 10)
-- Responsividade com breakpoint de 640px
 
 ## Autor
 Ventura Jr
