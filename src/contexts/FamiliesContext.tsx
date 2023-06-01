@@ -1,5 +1,6 @@
-import { ReactNode, createContext, useEffect, useState } from "react"
+import { ReactNode, createContext, useCallback, useEffect, useState } from "react"
 import { api } from "../lib/axios"
+import { parseArray } from "../utils/parseArray"
 
 interface Family {
   id: string
@@ -12,7 +13,6 @@ interface Family {
 
 interface FamilyContextType {
   families: Family[]
-  noDupFamiliesArray: Family[]
   fetchFamilies: (props: FetchProps) => Promise<void>
 }
 
@@ -31,29 +31,24 @@ export function FamiliesProvider({ children }: FamiliesProviderProps) {
   const [families, setFamilies] = useState<Family[]>([]);
 
 
-  async function fetchFamilies({ skip = 0, take = 21 }: FetchProps) {
+  const fetchFamilies = useCallback(async ({ skip = 0, take = 21 }: FetchProps) => {
     const response = await api.get<Family[]>('/families', {
       params: {
         skip,
         take,
       }
     })
-    setFamilies(state => [...state, ...response.data])
-  }
+    setFamilies(state => parseArray([...state, ...response.data]))
+  }, [])
 
   useEffect(() => {
     fetchFamilies({})
-  }, [])
-
-  const noDupFamiliesArray: Family[] = families.filter(
-    (obj, index, self) => index === self.findIndex((o) => o.id === obj.id)
-  );
+  }, [fetchFamilies])
 
   return (
     <FamiliesContext.Provider
       value={{
         families,
-        noDupFamiliesArray,
         fetchFamilies
       }}
     >

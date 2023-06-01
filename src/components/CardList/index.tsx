@@ -6,10 +6,10 @@ import { getImgUrl } from "../../utils/getImgUrl";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 export const CardList: React.FC = () => {
-  const { noDupFamiliesArray, fetchFamilies } = useContext(FamiliesContext);
+  const { families, fetchFamilies } = useContext(FamiliesContext);
   const [hasMoreData, setHasMoreData] = useState(true);
 
-  const cardsListLength = noDupFamiliesArray.length;
+  const cardsListLength = families.length;
 
   const fetchMoreData = async () => {
     const skip = cardsListLength + 1;
@@ -20,8 +20,6 @@ export const CardList: React.FC = () => {
       setHasMoreData(false);
     }
   }
-  console.log('Cardlistlenght=' + cardsListLength)
-
 
   return (
     <CardListContainer>
@@ -33,7 +31,7 @@ export const CardList: React.FC = () => {
         loader={"..."}
       >
         <CardListGrid>
-          {noDupFamiliesArray.map((family) => {
+          {families.map((family) => {
             return (
               <Card
                 key={family.id}
