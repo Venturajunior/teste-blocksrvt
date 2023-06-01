@@ -1,7 +1,13 @@
 # Projeto
 Teste Técnico para a Blocks Revit
-## Descição
+## Descrição
 O objetivo é criar um catálogo de famílias (blocos 3D), onde a paginação seja do tipo "scroll loading" (como no Instagram, Facebook, etc.), com o design fornecido pela Blocks.
+
+## Status do projeto
+-Entregue<br>
+-Leiaute conforme Figma<br>
+-Responsividade implementada<br>
+-Deploy realizado<br>
 
 ### Deployed Version
 [Catálogo Blocks Revit](https://teste-blocksrvt.vercel.app/)
@@ -35,7 +41,4 @@ O objetivo é criar um catálogo de famílias (blocos 3D), onde a paginação se
 
 ## Autor
 Ventura Jr
-
-## Status do projeto
-Entregue
 
